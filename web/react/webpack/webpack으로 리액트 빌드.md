@@ -33,29 +33,31 @@ touch tsconfig.json // 프로젝트의 루트 경로에 TS 환경 파일을 만�
 파일 생성후 아래 옵션을 내용으로 작성해준다.
 
 ```
-    {
-        "compilerOptions": {
-            "sourceMap": true,
-            "noImplicitAny": false,
-            "module": "commonjs",
-            "target": "es6",
-            "lib": [
-            "es2015",
-            "es2017",
-            "dom"
-            ],
-            "removeComments": true,
-            "allowSyntheticDefaultImports": false,
-            "jsx": "react",
-            "allowJs": true,
-            "baseUrl": "./",
-            "paths": {
-            "components/*": [
-                "src/components/*"
-            ],
-            }
-        }
-    }
+{
+    "compilerOptions": {
+      "outDir": "build",
+      "module": "esnext",
+      "target": "es5",
+      "lib": ["es6", "dom", "es2016", "es2017"],
+      "sourceMap": true,
+      "allowJs": false,
+      "jsx": "react",
+      "declaration": true,
+      "declarationDir": "dist/types",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true
+    },
+    "include": ["src"],
+    "exclude": ["node_modules", "build"]
+  }
 ```
 
 이후 다시 webpack.config.js 파일로 이동한 후 아래 내용추가
