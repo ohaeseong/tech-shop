@@ -64,6 +64,7 @@ touch tsconfig.json // 프로젝트의 루트 경로에 TS 환경 파일을 만�
 
 ```
     const path = require('path');
+    const HtmlWebpackPlugin = require('html-webpack-plugin');
 
     module.exports = {
     entry: './src/index.tsx',
